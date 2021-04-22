@@ -15,5 +15,6 @@ module.exports = {
         "@babel/plugin-proposal-export-default-from",
         "react-hot-loader/babel",
         "@babel/plugin-transform-runtime",
+        '@babel/plugin-syntax-dynamic-import',
     ],
 };
