@@ -4,17 +4,31 @@ module.exports = {
             '@babel/preset-env',
             {
                 modules: false,
-                useBuiltIns: "entry",
+                // useBuiltIns: "entry",
             },
         ],
         '@babel/preset-react',
     ],
-    plugins: [
-        // probably should remove those
-        "@babel/plugin-proposal-class-properties",
-        "@babel/plugin-proposal-export-default-from",
-        "react-hot-loader/babel",
-        "@babel/plugin-transform-runtime",
-        '@babel/plugin-syntax-dynamic-import',
-    ],
+  plugins: [
+    'styled-components',
+    '@babel/plugin-proposal-class-properties',
+    '@babel/plugin-syntax-dynamic-import',
+  ],
+  env: {
+    production: {
+      only: ['src'],
+      plugins: [
+        'lodash',
+        'transform-react-remove-prop-types',
+        '@babel/plugin-transform-react-inline-elements',
+        '@babel/plugin-transform-react-constant-elements',
+      ],
+    },
+    test: {
+      plugins: [
+        '@babel/plugin-transform-modules-commonjs',
+        'dynamic-import-node',
+      ],
+    },
+  },
 };

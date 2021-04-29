@@ -111,28 +111,27 @@ const carbon = {
     [value.$100]: '#1C1500',
   },
   [name.orange]: {
-    [value.$10]: '#FFF2E8',
-    [value.$20]: '#FFD9BE',
-    [value.$30]: '#FFB784',
-    [value.$40]: '#FF832B',
+    [value.$10]: '#feeaec',
+    [value.$20]: '#fccccd',
+    [value.$30]: '#e89993',
+    [value.$40]: '#db7369',
     [value.$50]: '#EB6200',
-    [value.$60]: '#BA4E00',
-    [value.$70]: '#8A3800',
-    [value.$80]: '#5E2900',
-    [value.$90]: '#3E1A00',
-    [value.$100]: '#231000',
+    [value.$60]: '#c43622',
+    [value.$70]: '#b7301c',
+    [value.$80]: '#a82710',//b7301c
+    [value.$90]: '#720000',//a82710
+    [value.$100]: '#530000',
   },
   [name.purple]: {
-    [value.$10]: '#f6f2ff',
-    [value.$20]: '#e8daff',
-    [value.$30]: '#d4bbff',
-    [value.$40]: '#be95ff',
-    [value.$50]: '#a56eff',
-    [value.$60]: '#8a3ffc',
-    [value.$70]: '#6929c4',
-    [value.$80]: '#491d8b',
-    [value.$90]: '#31135e',
-    [value.$100]: '#1c0f30',
+    [value.$10]: '#f4c8ff', // S -light
+    [value.$20]: '#c197d2', // S
+    [value.$40]: '#ae52d4', //P - light
+    [value.$50]: '#a56eff', // S - dark
+    [value.$60]: '#7b1fa2', // P
+    [value.$70]: '#7b1fa2',
+    [value.$80]: '#6a1b9a',
+    [value.$90]: '#4a0072', // P-dark
+    [value.$100]: '#4a148c',
   },
   [name.magenta]: {
     [value.$10]: '#fff0f7',
@@ -140,9 +139,9 @@ const carbon = {
     [value.$30]: '#ffafd2',
     [value.$40]: '#ff7eb6',
     [value.$50]: '#ee5396',
-    [value.$60]: '#d12771',
+    [value.$60]: '#d12771',// back
     [value.$70]: '#9f1853',
-    [value.$80]: '#740937',
+    [value.$80]: '#740937', // back 2
     [value.$90]: '#510224',
     [value.$100]: '#2a0a18',
   },
@@ -162,6 +161,41 @@ const carbon = {
 
 const token = {
   testToken: 'test-token',
+  appBackground01: 'appBackground01',
+  appBackground02: 'appBackground02',
+
+  snackbarSuccess01: 'snackbarSuccess01',
+  snackbarTextLight01: 'snackbarTextLight01',
+  snackbarWarning01: 'snackbarWarning01',
+  snackbarTextDark01: 'snackbarTextDark01',
+  snackbarError01: 'snackbarError01',
+  snackbarInfo01: 'snackbarInfo01',
+
+  text01: 'text01',
+  text02: 'text02',
+
+  button01Disabled: 'button01Disabled',
+  button02Disabled: 'button02Disabled',
+  successButton02: 'successButton02',
+  successButton01: 'successButton01',
+
+  button01: 'button01',
+  button02: 'button02',
+
+  buttonProgressBar01: 'buttonProgressBar01',
+
+  switchLoad01: 'switchLoad01',
+  switchOn01: 'switchOn01',
+  switchOff01: 'switchOff01',
+
+  infoInputError01: 'infoInputError01',
+  dateFilterInputBorderHoverColor: 'dateFilterInputBorderHoverColor',
+  infoWidgetSkeleton01: 'infoWidgetSkeleton01',
+
+  infoInput01Disabled: 'infoInput01Disabled',
+  infoInput01: 'infoInput01',
+  infoInputText01Disabled: 'infoInputText01Disabled',
+  infoInputText01: 'infoInputText01',
 }
 
 const Color = {

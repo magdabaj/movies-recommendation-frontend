@@ -1,0 +1,3 @@
+export const REQUEST_SET_SESSION = 'app/SignInPage/REQUEST_SET_SESSION'
+export const SET_SESSION_SUCCESS = 'app/SignInPage/SET_SESSION_SUCCESS'
+export const SET_SESSION_FAILED = 'app/SignInPage/SET_SESSION_FAILED'

@@ -20,3 +20,7 @@ const makeSelectApp = () =>
         selectAppDomain,
         substate => substate,
     );
+
+export {
+  makeSelectHasSession,
+} from './session/selectors'

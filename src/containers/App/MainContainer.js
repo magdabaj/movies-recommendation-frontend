@@ -3,17 +3,17 @@ import { useDispatch, useSelector } from 'react-redux'
 
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import useScrollDirection from 'utils/hooks/useScrollDirection'
-import { scrollBarCss } from 'components/ScrollBar'
-import { themeSpacing } from 'themes/fromTheme'
-import { toggleExpandAppBarTop } from 'containers/Navigation/actions'
-import getLayoutPadding from 'utils/getLayoutPadding'
+import useScrollDirection from './utils/hooks/useScrollDirection'
+import { scrollBarCss } from './components/ScrollBar'
+import { themeSpacing } from './themes/fromTheme'
+import { toggleExpandAppBarTop } from './containers/Navigation/actions'
+import getLayoutPadding from './utils/getLayoutPadding'
 import {
     makeSelectAppBarTopHasItems,
     makeSelectLocationAppBar,
     makeSelectSideNavIsExpanded,
-} from 'containers/Navigation/selectors'
-import { PaddingDirection } from 'utils/paddingDirection'
+} from './containers/Navigation/selectors'
+import { PaddingDirection } from './utils/paddingDirection'
 
 import { changeScrollPositionMainContainer } from './window/actions'
 import { SIDE_MENU_WIDTH, APP_BAR_SIDE_WIDTH } from '../Navigation/constants'

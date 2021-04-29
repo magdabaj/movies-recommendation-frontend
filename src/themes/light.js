@@ -21,32 +21,32 @@ const fontWeight = {
 }
 
 const color = {
-  background: '#131521',
-  backgroundSecondary: '#18253E',
+  background: '#FEEAEC',
+  backgroundSecondary: '#740937',
 
-  line: '#364B72',
-  formShadow: '#1c3254',
-  border: '#192842',
+  line: '#b7301c',
+  formShadow: '#a82710',
+  border: '#a82710',
 
   text: '#ffffff',
   secondaryText: '#7BA5EA',
 
-  default: '#009EE3',
+  default: '#F67B50',
   defaultDark: '#0675A9',
 
-  primaryLight: '#c4d5f2',
-  primary: '#009EE3',
-  primaryDark: '#0d47a1',
+  primaryLight: '#e0593a',
+  primary: '#a82710',
+  primaryDark: '#720000',
 
-  secondary: '#aa66cc',
-  secondaryDark: '#9933CC',
+  secondary: '#fbc490',
+  secondaryDark: '#c69462',
 
   danger: '#EA544F',
 }
 
 const gradient = {
-  backgroundFrom: '#131521',
-  backgroundTo: '#1C3356',
+  backgroundFrom: '#2a0a18',
+  backgroundTo: '#ffd6e8', // #C197D2
 }
 
 const lightTheme = {
@@ -62,11 +62,48 @@ const lightTheme = {
 
 export const colorTokens = createColorTokenMapping('light', {
   [Color.token.testToken]: [Color.cyan, Color.value.$10],
+  [Color.token.appBackground01]: [Color.orange, Color.value.$100],
+  [Color.token.appBackground02]: [Color.orange, Color.value.$20],
+
+  [Color.token.snackbarSuccess01]: [Color.green, Color.value.$40],
+  [Color.token.snackbarError01]: [Color.red, Color.value.$50],
+  [Color.token.snackbarWarning01]: [Color.bronze, Color.value.$30],
+  [Color.token.snackbarInfo01]: [Color.cyan, Color.value.$60],
+
+  [Color.token.snackbarTextLight01]: [Color.cyan, Color.value.$10],
+  [Color.token.snackbarTextDark01]: [Color.bronze, Color.value.$100],
+
+  [Color.token.text01]: [Color.orange, Color.value.$10],
+  [Color.token.text02]: [Color.orange, Color.value.$60],
+
+  [Color.token.button01]: [Color.orange, Color.value.$60],
+  [Color.token.button02]: [Color.orange, Color.value.$70],
+
+  [Color.token.button01Disabled]: [Color.orange, Color.value.$80],
+  [Color.token.button02Disabled]: [Color.orange, Color.value.$90],
+  [Color.token.successButton01]: [Color.green, Color.value.$40],
+  [Color.token.successButton02]: [Color.green, Color.value.$70, 0.5],
+
+  [Color.token.buttonProgressBar01]: [Color.orange, Color.value.$100],
+
+  [Color.token.switchLoad01]: [Color.orange, Color.value.$70],
+  [Color.token.switchOn01]: [Color.orange, Color.value.$70],
+  [Color.token.switchOff01]: [Color.gray, Color.value.$40],
+
+  [Color.token.infoInputError01]: [Color.red, Color.value.$40],
+  [Color.token.dateFilterInputBorderHoverColor]: [Color.orange, Color.value.$60],
+  [Color.token.infoWidgetSkeleton01]: [Color.orange, Color.value.$80],
+
+  [Color.token.infoInput01Disabled]: [Color.orange, Color.value.$90],
+  [Color.token.infoInput01]: [Color.orange, Color.value.$80],
+
+  [Color.token.infoInputText01Disabled]: [Color.orange, Color.value.$60],
+  [Color.token.infoInputText01]: [Color.orange, Color.value.$40],
 })
 
 const palette = {
-    primary: { main: '#2196f3', contrastText: '#ffffff' },
-    secondary: { main: '#1b3154', contrastText: '#7BA5EA', dark: '#131521' },
+    primary: { main: '#a82710', contrastText: '#ffffff' },
+    secondary: { main: '#fbc490', contrastText: '#211522', dark: '#c69462', light: '#fff7c1' },
     error: { main: '#EA544F', contrastText: '#ffffff' },
     success: {
         main: '#4caf50',
@@ -81,7 +118,7 @@ const palette = {
     warning: { main: '#FFF590', contrastText: '#ffffff' },
     text: {
         primary: '#ffffff',
-        secondary: '#7BA5EA',
+        secondary: '#F67B50',
     },
 }
 
@@ -117,6 +154,9 @@ const zIndex = {
 
 const fontSizes = [
   { name: 'textXSmall', pixels: 10 },
+  { name: 'textSmall', pixels: 16 },
+  { name: 'consent', pixels: 12 },
+  { name: 'text', pixels: 24 },
 ]
 
 const makeFontSize = (fontSizes, { name, pixels }) => ({
