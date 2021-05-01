@@ -9,13 +9,16 @@ import { Sizes } from '../../../../../../components/Text/props'
 import { themeColor } from '../../../../../../themes/fromTheme'
 
 const Container = styled(Row)`
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   border-top: 1px solid ${themeColor('border')};
 `
 
 const LinkToForgotPassword = () => (
   <Container>
+    <Link to="/sign-up">
+      <Text lineHeight={Sizes.x3p5} message={messages.dontHaveAnAccount} />
+    </Link>
     <Link to="/forgot-password">
       <Text lineHeight={Sizes.x3p5} message={messages.forgotPassword} />
     </Link>

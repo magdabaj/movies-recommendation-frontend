@@ -49,13 +49,15 @@ const makeBaseRequest = baseUrl => async (
   endpointUrl,
   method = 'GET',
   {
-    useNormalizedDataResponse = true,
+    useNormalizedDataResponse = false,
     getHeaders = null,
     payload = null,
     requestType,
   } = {},
 ) => {
   const options = makeOptions({ getHeaders, method, payload })
+
+  console.log('payload: ', payload)
   const url = `${baseUrl}/${endpointUrl}`
 
   doIfDev(() => {

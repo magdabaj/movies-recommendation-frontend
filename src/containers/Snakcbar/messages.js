@@ -87,11 +87,7 @@ export default {
   //   defaultMessage: 'Automation has been deleted',
   //   pl: 'Automatyzacja została usunięta',
   // },
-  // userCreated: {
-  //   id: `${scope}.userCreated`,
-  //   defaultMessage: 'User created',
-  //   pl: 'Użytkownik utworzony',
-  // },
+  userCreated: 'Użytkownik utworzony',
   // passwordReset: {
   //   id: `${scope}.passwordReset`,
   //   defaultMessage: 'Password reset',

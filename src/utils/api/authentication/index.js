@@ -1,7 +1,7 @@
 import http from '../../request/http'
 
 const signIn = (username, password) =>
-  http.post('user/signin', { username, password })
+  http.post('user/signin', { email: username, password })
 const signOut = () => http.post('logout')
 const resetPassword = (username, newPassword, recoveryPassword) =>
   http.post('reset-password', {

@@ -10,6 +10,7 @@ export const name = {
   purple: 'purple',
   magenta: 'magenta',
   red: 'red',
+  coral: 'coral',
 }
 
 const value = {
@@ -110,6 +111,18 @@ const carbon = {
     [value.$90]: '#302400',
     [value.$100]: '#1C1500',
   },
+  [name.coral]: {
+    [value.$10]: '#f9eae8',
+    [value.$20]: '#fbcfc0',
+    [value.$30]: '#f9b198',
+    [value.$40]: '#f7936f',
+    [value.$50]: '#f67c50', // S  -main
+    [value.$60]: '#f56833',
+    [value.$70]: '#eb622f',
+    [value.$80]: '#dd5b2b',
+    [value.$90]: '#ce5428',
+    [value.$100]: '#b64820',
+},
   [name.orange]: {
     [value.$10]: '#feeaec',
     [value.$20]: '#fccccd',
@@ -118,7 +131,7 @@ const carbon = {
     [value.$50]: '#EB6200',
     [value.$60]: '#c43622',
     [value.$70]: '#b7301c',
-    [value.$80]: '#a82710',//b7301c
+    [value.$80]: '#A82810',//b7301c
     [value.$90]: '#720000',//a82710
     [value.$100]: '#530000',
   },
@@ -196,6 +209,8 @@ const token = {
   infoInput01: 'infoInput01',
   infoInputText01Disabled: 'infoInputText01Disabled',
   infoInputText01: 'infoInputText01',
+
+  scrollBarScroll01: 'scrollBarScroll01',
 }
 
 const Color = {

@@ -7,8 +7,8 @@ import {produce} from "immer";
 
 export const initialState = {
     token: null,
-    email: null,
-    expiration: null,
+    user: null,
+    // expiration: null,
     ...getSession(),
 }
 

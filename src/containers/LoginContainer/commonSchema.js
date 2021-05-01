@@ -1,6 +1,8 @@
 import * as Yup from 'yup'
 import messages from './messages'
 import CustomYupString from '../../utils/yup/string'
+import equalTo from "../../utils/yup/equalTo";
+Yup.addMethod(Yup.string, 'equalTo', equalTo)
 
 // export const usernameRegex = /^[a-zA-Z][a-zA-Z0-9]*[.]?[a-zA-Z0-9]+$/
 export const emailRegex = /^$|[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/
@@ -27,7 +29,7 @@ export const confirmedPassword = (passwordPropName = 'password') =>
     messages.passwordsMustMatch,
   )
     .required(messages.confirmedPasswordIsRequired)
-    .trim()
+    // .trim()
 
 export const password = Yup.string()
   .required(messages.passwordIsRequired)

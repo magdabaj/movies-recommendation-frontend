@@ -47,6 +47,8 @@ export default ({ key, saga, mode }) => WrappedComponent => {
 }
 
 const useInjectSaga = ({ key, saga, mode }) => {
+  console.log('key: ' + key)
+
   const snackbar = useSnackbarContext()
   const context = React.useContext(ReactReduxContext)
   React.useEffect(() => {

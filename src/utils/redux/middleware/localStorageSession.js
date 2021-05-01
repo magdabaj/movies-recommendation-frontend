@@ -55,5 +55,5 @@ export const getSession = () => {
         return null
     }
 
-    return sessionExtract
+    return sessionExtract.session
 }

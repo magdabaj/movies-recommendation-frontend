@@ -1,6 +1,6 @@
 import React from 'react'
 import {useInjectSaga} from "../../utils/injectSaga";
-import saga from "./saga";
+import saga from "./sagas";
 import {getColor} from "../../themes/color/getColor";
 import Color from "../../themes/color/constants";
 import Column from "../../components/Column";
@@ -10,6 +10,7 @@ import {Breakpoint, themeBreakpoint, Type} from "../../themes/fromTheme/breakpoi
 import {themeSpacing} from "../../themes/fromTheme";
 import {Route} from "react-router";
 import SignInPage from './containers/SignInPage'
+import {SignUpPage} from "./containers/SignUpPage";
 
 const key = 'loginContainer'
 
@@ -44,9 +45,9 @@ export const LoginContainer = ({ hasSession }) => {
       {hasSession && <Redirect to={"/"}/>}
       <RouteContainer>
         {/*<Route path="/forgot-password" component={ForgotPasswordPage} />*/}
-        {/*<Route path="/sign-up" component={SignUpPage} />*/}
+        <Route exact path="/sign-up" component={SignUpPage} />
         <Route path="/sign-in" component={SignInPage} />
-        <Route exact path="/" render={() => <Redirect to="/sign-in" />} />
+        <Route exact path="/user" render={() => <Redirect to="/sign-in" />} />
       </RouteContainer>
     </Container>
   )

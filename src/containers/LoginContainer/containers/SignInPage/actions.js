@@ -11,11 +11,11 @@ export const requestSetSession = ({ username, password, rememberMe }) => ({
   rememberMe,
 })
 
-export const setSessionSuccess = ({ session, user, refreshToken }) => ({
+export const setSessionSuccess = ({ accessToken, user }) => ({
   type: SET_SESSION_SUCCESS,
-  token: session,
-  user,
-  refreshToken,
+  token: accessToken,
+  user: user.email,
+  // refreshToken,
 })
 
 export const setSessionFailed = error => ({

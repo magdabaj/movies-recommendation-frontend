@@ -52,7 +52,6 @@ const makeParseResponse = ({
 const checkStatus = ifElse(
   statusInRange(200, 400),
   skip,
-  // @todo @anyone refactor? This isn't fp, but would require app-wide refactor and might not be plausible
   response => {
     throw new RequestError(response, response.statusText)
   },
@@ -66,6 +65,7 @@ const request = (url, fetchOptions, useNormalizedDataResponse, requestType) =>
   fetch(url, fetchOptions)
     .catch(handleFetchError)
     .then(checkStatus)
-    .then(makeParseResponse({ useNormalizedDataResponse, requestType }))
+    .then(/*res=>res.json())//*/makeParseResponse({ useNormalizedDataResponse, requestType }))
+    // .then(res => console.log(res))
 
 export default request

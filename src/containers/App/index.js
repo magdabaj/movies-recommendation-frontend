@@ -8,14 +8,28 @@ import {useInjectSaga} from "../../utils/injectSaga";
 import saga from "./saga";
 import {useInjectReducer} from "../../utils/injectReducer";
 import reducer from "./reducer";
+import {makeSelectHasSession} from "./selectors";
+import {createStructuredSelector} from "reselect";
+import {useSelector} from "react-redux";
+import {AuthenticatedRoute} from "../../components/AuthenticatedRoute";
 // import MainContainer from "./MainContainer";
 
 const key = 'app'
+
+const makeStateSelector = () =>
+  createStructuredSelector({
+    hasSession: makeSelectHasSession(),
+    // isAdmin: makeSelectIsAdmin(),
+  })
+
 
 const App = () => {
   useInjectSaga({ key, saga })
   useInjectReducer({ key, reducer })
 
+  const { hasSession } = useSelector(makeStateSelector())
+
+  console.log('app has session', hasSession)
 
   return (
         <div>

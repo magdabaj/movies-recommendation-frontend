@@ -22,7 +22,7 @@ const fontWeight = {
 
 const color = {
   background: '#FEEAEC',
-  backgroundSecondary: '#740937',
+  backgroundSecondary: '#f9eae8',
 
   line: '#b7301c',
   formShadow: '#a82710',
@@ -35,11 +35,11 @@ const color = {
   defaultDark: '#0675A9',
 
   primaryLight: '#e0593a',
-  primary: '#a82710',
+  primary: '#a82810',
   primaryDark: '#720000',
 
-  secondary: '#fbc490',
-  secondaryDark: '#c69462',
+  secondary: '#f67b50',
+  secondaryDark: '#be4c25',
 
   danger: '#EA544F',
 }
@@ -70,7 +70,7 @@ export const colorTokens = createColorTokenMapping('light', {
   [Color.token.snackbarWarning01]: [Color.bronze, Color.value.$30],
   [Color.token.snackbarInfo01]: [Color.cyan, Color.value.$60],
 
-  [Color.token.snackbarTextLight01]: [Color.cyan, Color.value.$10],
+  [Color.token.snackbarTextLight01]: [Color.colar, Color.value.$10],
   [Color.token.snackbarTextDark01]: [Color.bronze, Color.value.$100],
 
   [Color.token.text01]: [Color.orange, Color.value.$10],
@@ -99,11 +99,13 @@ export const colorTokens = createColorTokenMapping('light', {
 
   [Color.token.infoInputText01Disabled]: [Color.orange, Color.value.$60],
   [Color.token.infoInputText01]: [Color.orange, Color.value.$40],
+
+  [Color.token.scrollBarScroll01]: [Color.coral, Color.value.$60],
 })
 
 const palette = {
-    primary: { main: '#a82710', contrastText: '#ffffff' },
-    secondary: { main: '#fbc490', contrastText: '#211522', dark: '#c69462', light: '#fff7c1' },
+    primary: { main: '#a82810', contrastText: '#ffffff' },
+    secondary: { main: '#f67b50', contrastText: '#000000', dark: '#be4c25', light: '#ffac7d' },
     error: { main: '#EA544F', contrastText: '#ffffff' },
     success: {
         main: '#4caf50',

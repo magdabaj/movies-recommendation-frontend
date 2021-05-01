@@ -70,3 +70,9 @@ export const baseActionName = type => {
 
 export const isActionCompleted = (actionInProgress, actionIncoming) =>
   baseActionName(actionInProgress) !== baseActionName(actionIncoming)
+
+export const getSuccessActionWithoutPayload = (type, message) =>
+  createActionWithoutPayload(type, {
+    message,
+    snackbarToken: SnackbarToken.success,
+  })

@@ -24,3 +24,5 @@ const makeSelectApp = () =>
 export {
   makeSelectHasSession,
 } from './session/selectors'
+
+export {makeSelectApp}
