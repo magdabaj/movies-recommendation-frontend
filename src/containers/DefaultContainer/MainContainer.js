@@ -3,20 +3,16 @@ import { useDispatch, useSelector } from 'react-redux'
 
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import useScrollDirection from './utils/hooks/useScrollDirection'
-import { toggleExpandAppBarTop } from './containers/Navigation/actions'
-import getLayoutPadding from './utils/getLayoutPadding'
-import {
-    makeSelectAppBarTopHasItems,
-    makeSelectLocationAppBar,
-    makeSelectSideNavIsExpanded,
-} from '../Navigation/selectors'
+import useScrollDirection from '../../utils/hooks/useScrollDirection'
+import getLayoutPadding from '../../utils/getLayoutPadding'
 import { PaddingDirection } from '../../utils/paddingDirection'
 
 import { changeScrollPositionMainContainer } from './window/actions'
-import { SIDE_MENU_WIDTH, APP_BAR_SIDE_WIDTH } from '../Navigation/constants'
 import {themeSpacing} from "../../themes/fromTheme";
 import {scrollBarCss} from "../../components/ScrollBar";
+import {makeSelectLocationAppBar} from "../Navigation/selectors";
+import {toggleExpandAppBarTop} from "../Navigation/actions";
+import {APP_BAR_SIDE_WIDTH, SIDE_MENU_WIDTH} from "../Navigation/constants";
 // todo test it
 const ContainerWrapper = styled.div`
   margin-left: 0;
@@ -31,8 +27,8 @@ const ContainerWrapper = styled.div`
         breakpoint: 'sm-down',
         paddingDirection: PaddingDirection.top,
         locationAppBar: props.locationAppBar,
-        sideNavExpanded: true,
-        appBarTopHasItems: props.appBarTopHasItems,
+        // sideNavExpanded: true,
+        // appBarTopHasItems: props.appBarTopHasItems,
     })}px;
   }
 
@@ -42,15 +38,15 @@ const ContainerWrapper = styled.div`
         breakpoint: 'md-up',
         paddingDirection: PaddingDirection.top,
         locationAppBar: props.locationAppBar,
-        sideNavExpanded: props.sideNavExpanded,
-        appBarTopHasItems: props.appBarTopHasItems,
+        // sideNavExpanded: props.sideNavExpanded,
+        // appBarTopHasItems: props.appBarTopHasItems,
     })}px;
 
     padding-left: ${props =>
     getLayoutPadding({
         paddingDirection: PaddingDirection.left,
         locationAppBar: props.locationAppBar,
-        sideNavExpanded: props.sideNavExpanded,
+        // sideNavExpanded: props.sideNavExpanded,
     })}px;
   }
   ${scrollBarCss}
@@ -58,8 +54,8 @@ const ContainerWrapper = styled.div`
 const MainContainer = ({ children }) => {
     const dispatch = useDispatch()
     const locationAppBar = useSelector(makeSelectLocationAppBar())
-    const sideNavExpanded = useSelector(makeSelectSideNavIsExpanded())
-    const appBarTopHasItems = useSelector(makeSelectAppBarTopHasItems())
+    // const sideNavExpanded = useSelector(makeSelectSideNavIsExpanded())
+    // const appBarTopHasItems = useSelector(makeSelectAppBarTopHasItems())
     const containerElement = useRef(null)
     const scrollDirection = useScrollDirection()
 
@@ -93,8 +89,7 @@ const MainContainer = ({ children }) => {
             locationAppBar={locationAppBar}
             sideMenuWidth={SIDE_MENU_WIDTH}
             appBarSideWidth={APP_BAR_SIDE_WIDTH}
-            sideNavExpanded={sideNavExpanded}
-            appBarTopHasItems={appBarTopHasItems}
+            // appBarTopHasItems={appBarTopHasItems}
         >
             {children}
         </ContainerWrapper>
