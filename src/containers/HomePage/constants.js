@@ -1,5 +1,5 @@
 /*
  *
- * RecipesHomePage constants
+ * HomePage constants
  *
  */

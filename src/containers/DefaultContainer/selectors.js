@@ -1,5 +1,5 @@
 import { createSelector } from 'reselect';
-import { initialState } from './reducer';
+import { initialState } from './window/reducer';
 
 /**
  * Direct selector to the recipesHomePage state domain

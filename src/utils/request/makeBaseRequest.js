@@ -3,8 +3,9 @@ import { getBody, isFormData } from './common'
 import { isEmptyOrNil, returnInput, returns } from '../fp'
 import { compose, cond, isNil, T } from 'ramda'
 import { DEFAULT_FORM_HEADERS, DEFAULT_HEADERS } from './constants'
-import request from './request'
+import request, {getFetchOptions} from './request'
 import { doIfDev } from '../dev'
+import {session} from "../redux/localStorage/session";
 
 const debugInfo = ({ body, headers, method }, url) => {
   const parsedBody = getBody(body)
@@ -56,6 +57,13 @@ const makeBaseRequest = baseUrl => async (
   } = {},
 ) => {
   const options = makeOptions({ getHeaders, method, payload })
+  console.log('options', options)
+
+  const sessionData = session.get()
+  console.log('sessionData', sessionData)
+  if (sessionData) {
+    options.headers.Authorization = `Bearer ${sessionData.session.token}`
+  }
 
   console.log('payload: ', payload)
   const url = `${baseUrl}/${endpointUrl}`

@@ -1,4 +1,4 @@
-import { selectAppDomain, makeSelectTags } from '../selectors';
+import { selectAppDomain, makeSelectTags } from '../../DefaultContainer/selectors';
 import {describe, expect, it} from "@jest/globals";
 import fetchStates from "../../../utils/fetchStates";
 

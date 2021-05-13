@@ -8,7 +8,6 @@ export const AuthenticatedRoute = ({
                                        redirectTo,
                                        ...rest
                                    }) => {
-  console.log(hasSession, 'hasSession')
  return (<Route
     {...rest}
     render={props =>

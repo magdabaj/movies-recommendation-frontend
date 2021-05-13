@@ -11,6 +11,9 @@ import {themeSpacing} from "../../themes/fromTheme";
 import {Route} from "react-router";
 import SignInPage from './containers/SignInPage'
 import {SignUpPage} from "./containers/SignUpPage";
+import {createStructuredSelector} from "reselect";
+import {makeSelectHasSession} from "../DefaultContainer/selectors";
+import {useSelector} from "react-redux";
 
 const key = 'loginContainer'
 
@@ -37,9 +40,17 @@ const RouteContainer = styled.div`
   }
 `
 
-export const LoginContainer = ({ hasSession }) => {
+const makeStateSelector = () =>
+  createStructuredSelector({
+    hasSession: makeSelectHasSession(),
+  })
+
+export const LoginContainer = () => {
   useInjectSaga({ key, saga })
 
+  const { hasSession } = useSelector(makeStateSelector())
+
+  console.log('has session', hasSession)
   return (
     <Container>
       {hasSession && <Redirect to={"/"}/>}

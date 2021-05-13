@@ -6,11 +6,8 @@
 
 // todo @marcin.surma move to proper directories
 export default {
-  // websocketError: {
-  //   id: `${scope}.websocketError`,
-  //   pl: 'Błąd websocketa',
-  //   defaultMessage: 'Websocket error',
-  // },
+  sendRatingError: 'Nie udalo sie dodac oceny',
+  getMovieFailed: 'Nie udalo sie pobrac filmu',
   // failedToReceiveDevices: {
   //   id: `${scope}.failedToReceiveDevices`,
   //   defaultMessage: 'Failed to receive devices',

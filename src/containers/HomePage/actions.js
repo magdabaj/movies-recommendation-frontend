@@ -1,6 +1,6 @@
 /*
  *
- * RecipesHomePage actions
+ *HomePage actions
  *
  */
 

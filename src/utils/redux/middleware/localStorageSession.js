@@ -1,6 +1,6 @@
 import { session } from '../localStorage/session'
-import {UPDATE_SESSION} from "../../../containers/App/session/constants";
-import {REMOVE_SESSION_SUCCESS} from "../../../containers/App/signOut/constants";
+import {UPDATE_SESSION} from "../../../containers/DefaultContainer/session/constants";
+import {REMOVE_SESSION_SUCCESS} from "../../../containers/DefaultContainer/signOut/constants";
 import {SET_SESSION_SUCCESS} from "../../../containers/LoginContainer/containers/SignInPage/constants";
 
 export const localStorageSessionMiddleWare = () => next => action => {

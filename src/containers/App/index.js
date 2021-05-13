@@ -5,13 +5,15 @@ import HomePage from "../HomePage";
 // import {ToastContainer} from "react-toastify";
 import GlobalStyle from "../../global-styles";
 import {useInjectSaga} from "../../utils/injectSaga";
-import saga from "./saga";
 import {useInjectReducer} from "../../utils/injectReducer";
 import reducer from "./reducer";
-import {makeSelectHasSession} from "./selectors";
+import saga from '../DefaultContainer/sagas'
+import {makeSelectHasSession} from "../DefaultContainer/selectors";
 import {createStructuredSelector} from "reselect";
 import {useSelector} from "react-redux";
 import {AuthenticatedRoute} from "../../components/AuthenticatedRoute";
+import RateMovie from "../RateMovie";
+import RecommendMovies from "../RecommendMovies";
 // import MainContainer from "./MainContainer";
 
 const key = 'app'
@@ -19,7 +21,6 @@ const key = 'app'
 const makeStateSelector = () =>
   createStructuredSelector({
     hasSession: makeSelectHasSession(),
-    // isAdmin: makeSelectIsAdmin(),
   })
 
 
@@ -32,12 +33,13 @@ const App = () => {
   console.log('app has session', hasSession)
 
   return (
-        <div>
+        <>
             <Switch>
-                <Route exact path="/" component={HomePage} />
+                <Route exact path="/user" component={RecommendMovies} />
+                <Route exact path="/user/movie/:movieId/rate" component={RateMovie} />
             </Switch>
             <GlobalStyle/>
-        </div>
+        </>
     );
 }
 

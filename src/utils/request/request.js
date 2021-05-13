@@ -17,6 +17,8 @@ import RequestError from './errors/RequestError'
 import FetchError from './errors/FetchError'
 import { resolveTo } from '../promise'
 import { RequestType } from './constants'
+import {isFormData} from "./common";
+import {session} from "../redux/localStorage/session";
 
 const hasValueAnd = cond => x => x && x.data && cond
 
@@ -50,10 +52,13 @@ const makeParseResponse = ({
   )
 
 const checkStatus = ifElse(
-  statusInRange(200, 400),
+  statusInRange(200, 405),
   skip,
   response => {
+    console.log('error response ', response)
+    // return  response
     throw new RequestError(response, response.statusText)
+
   },
 )
 
@@ -61,11 +66,41 @@ const handleFetchError = error => {
   throw new FetchError(error)
 }
 
-const request = (url, fetchOptions, useNormalizedDataResponse, requestType) =>
-  fetch(url, fetchOptions)
+
+export function getFetchOptions(opts) {
+  const fetchOptions = {}
+  fetchOptions.headers = {}
+
+  const isPayloadFormData = isFormData(opts.payload)
+  if (opts.payload) {
+    fetchOptions.body =opts.payload
+      // ? opts.payload
+      // : JSON.stringify(snakeCaseKeys(opts.payload))
+  }
+
+  const contentType = isPayloadFormData // ? null : getContentType(opts)
+  // has to be done mutable like this, null returns bad request I read some stack and I think it's kind of fetch issue
+  if (contentType) fetchOptions.headers['Content-Type'] = contentType
+
+  const sessionData = session.get()
+  if (sessionData) {
+    fetchOptions.headers.Authorization = `Bearer ${sessionData.token}`
+  }
+
+  return fetchOptions
+}
+
+
+const request = (url, fetchOptions, useNormalizedDataResponse, requestType) => {
+  // const fetchOptions = {
+  //   method,
+  //   ...getFetchOptions(options),
+  // }
+
+  return fetch(url, fetchOptions)
     .catch(handleFetchError)
     .then(checkStatus)
-    .then(/*res=>res.json())//*/makeParseResponse({ useNormalizedDataResponse, requestType }))
-    // .then(res => console.log(res))
-
+    .then(/*res=>res.json())//*/makeParseResponse({useNormalizedDataResponse, requestType}))
+  // .then(res => console.log(res))}
+}
 export default request

@@ -3,6 +3,12 @@ import messages from './messages'
 
 import { tabInfo } from './common'
 
+
+export const menuId = 'primary-search-account-menu';
+
+
+export const mobileMenuId = 'primary-search-account-menu-mobile';
+
 /**
  * Navigation constants
  */

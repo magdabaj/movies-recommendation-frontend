@@ -2,7 +2,7 @@ import { call, delay, put, takeLatest } from 'redux-saga/effects'
 // import { oAuthTokens } from 'utils/localstorage/oAuthTokens'
 import { getRefreshedToken } from './request/refreshToken'
 import { doIfDev } from './dev'
-import { requestRemoveSession } from '../containers/App/signOut/actions'
+import { requestRemoveSession } from '../containers/DefaultContainer/signOut/actions'
 import { session } from './session'
 import globalConfig from 'globalConfig'
 

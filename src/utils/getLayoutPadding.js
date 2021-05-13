@@ -12,7 +12,7 @@ import { AppBarLocation } from '../containers/Navigation/containers/AppBar/const
 
 const getLayoutPadding = ({
                             paddingDirection,
-                            // locationAppBar,
+                            locationAppBar,
                             // sideNavExpanded,
                             breakpoint,
                             appBarTopHasItems,

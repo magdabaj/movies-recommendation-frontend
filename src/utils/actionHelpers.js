@@ -76,3 +76,9 @@ export const getSuccessActionWithoutPayload = (type, message) =>
     message,
     snackbarToken: SnackbarToken.success,
   })
+
+export const getErrorActionWithoutPayload = (type, message) =>
+  createActionWithoutPayload(type, {
+    message,
+    snackbarToken: SnackbarToken.error,
+  })

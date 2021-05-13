@@ -186,6 +186,7 @@ const token = {
 
   text01: 'text01',
   text02: 'text02',
+  textSecondary: 'textSecondary',
 
   button01Disabled: 'button01Disabled',
   button02Disabled: 'button02Disabled',
@@ -211,6 +212,10 @@ const token = {
   infoInputText01: 'infoInputText01',
 
   scrollBarScroll01: 'scrollBarScroll01',
+
+  menuItemBackground: 'menuItemBackground',
+
+  backgroundSecondary: 'backgroundSecondary',
 }
 
 const Color = {

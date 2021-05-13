@@ -70,7 +70,7 @@ export const colorTokens = createColorTokenMapping('light', {
   [Color.token.snackbarWarning01]: [Color.bronze, Color.value.$30],
   [Color.token.snackbarInfo01]: [Color.cyan, Color.value.$60],
 
-  [Color.token.snackbarTextLight01]: [Color.colar, Color.value.$10],
+  [Color.token.snackbarTextLight01]: [Color.coral, Color.value.$10],
   [Color.token.snackbarTextDark01]: [Color.bronze, Color.value.$100],
 
   [Color.token.text01]: [Color.orange, Color.value.$10],
@@ -101,11 +101,18 @@ export const colorTokens = createColorTokenMapping('light', {
   [Color.token.infoInputText01]: [Color.orange, Color.value.$40],
 
   [Color.token.scrollBarScroll01]: [Color.coral, Color.value.$60],
+
+  [Color.token.menuItemBackground]: [Color.coral, Color.value.$50],
+
+  [Color.token.backgroundSecondary]: [Color.coral, Color.value.$10],
+
+  [Color.token.textSecondary]: [Color.coral, Color.value.$50],
 })
 
 const palette = {
     primary: { main: '#a82810', contrastText: '#ffffff' },
     secondary: { main: '#f67b50', contrastText: '#000000', dark: '#be4c25', light: '#ffac7d' },
+    common: {light: '#f9eae8'},
     error: { main: '#EA544F', contrastText: '#ffffff' },
     success: {
         main: '#4caf50',
